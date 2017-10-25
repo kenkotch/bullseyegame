@@ -2,7 +2,7 @@
 //  BullsEye
 //
 //  Created by Ken Kotch on 10/24/17.
-//  Copyright © 2017 ken. All rights reserved.
+//  Copyright © 2017 Ken. All rights reserved.
 
 import UIKit
 
