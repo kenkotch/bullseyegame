@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480B58B01FA04DD80050D793 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B58AF1FA04DD80050D793 /* AboutViewController.swift */; };
+		480B58B21FA050020050D793 /* KenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480B58B11FA050020050D793 /* KenViewController.swift */; };
 		48E9042F1F9FD8CC00560E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E9042E1F9FD8CC00560E5A /* AppDelegate.swift */; };
 		48E904311F9FD8CC00560E5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E904301F9FD8CC00560E5A /* ViewController.swift */; };
 		48E904341F9FD8CC00560E5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E904321F9FD8CC00560E5A /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		480B58AF1FA04DD80050D793 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		480B58B11FA050020050D793 /* KenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KenViewController.swift; sourceTree = "<group>"; };
 		48E9042B1F9FD8CC00560E5A /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E9042E1F9FD8CC00560E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E904301F9FD8CC00560E5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,9 +58,11 @@
 		48E9042D1F9FD8CC00560E5A /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				480B58AF1FA04DD80050D793 /* AboutViewController.swift */,
 				48E9042E1F9FD8CC00560E5A /* AppDelegate.swift */,
 				48E904301F9FD8CC00560E5A /* ViewController.swift */,
 				48E904321F9FD8CC00560E5A /* Main.storyboard */,
+				480B58B11FA050020050D793 /* KenViewController.swift */,
 				48E904351F9FD8CC00560E5A /* Assets.xcassets */,
 				48E904371F9FD8CC00560E5A /* LaunchScreen.storyboard */,
 				48E9043A1F9FD8CC00560E5A /* Info.plist */,
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480B58B01FA04DD80050D793 /* AboutViewController.swift in Sources */,
 				48E904311F9FD8CC00560E5A /* ViewController.swift in Sources */,
 				48E9042F1F9FD8CC00560E5A /* AppDelegate.swift in Sources */,
+				480B58B21FA050020050D793 /* KenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

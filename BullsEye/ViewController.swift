@@ -20,7 +20,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentValue = lroundf(slider.value)
-        startNewRound()
+        restart()
+        
+        let thumbImageNormal = #imageLiteral(resourceName: "SliderThumb-Normal") //UIImage (named: "SliderThumb-Normal")
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        
+        let thumbImageHighlighted = #imageLiteral(resourceName: "SliderThumb-Highlighted") // UIImage (named: "SliderThumb-Highlighted")
+        slider.setThumbImage(thumbImageHighlighted, for: .highlighted)
+        
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        
+        let trackLeftImage = #imageLiteral(resourceName: "SliderTrackLeft")  // UIImage(named: "SliderTrackLeft")
+        let trackLeftResisable = trackLeftImage.resizableImage(withCapInsets: insets)
+        slider.setMinimumTrackImage(trackLeftResisable, for: .normal)
+        
+        let trackRightImage = #imageLiteral(resourceName: "SliderTrackRight")  // UIImage(named: "SliderTrackRight")
+        let trackRightResisable = trackRightImage.resizableImage(withCapInsets: insets)
+        slider.setMaximumTrackImage(trackRightResisable, for: .normal)
     }
     
     func updateLables() {
@@ -86,11 +102,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func restart() {
-        startNewRound()
-        round = 1
+        round = 0
         score = 0
-        scoreLabel.text = String(0)
-        roundLabel.text = String(0)
+        startNewRound()
     }
     
     
