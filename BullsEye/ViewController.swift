@@ -1,19 +1,21 @@
-//
 //  ViewController.swift
 //  BullsEye
 //
 //  Created by Ken Kotch on 10/24/17.
 //  Copyright © 2017 ken. All rights reserved.
-//
 
 import UIKit
 
 class ViewController: UIViewController {
     
-    var currentValue: Int = 0
+    var currentValue = 0
     @IBOutlet weak var slider: UISlider!
-    var targetValue: Int = 0
+    var targetValue = 0
     @IBOutlet weak var targetLabel: UILabel!
+    var score = 0
+    @IBOutlet weak var scoreLabel: UILabel!
+    var round = 0
+    @IBOutlet weak var roundLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +25,15 @@ class ViewController: UIViewController {
     
     func updateLables() {
         targetLabel.text = String(targetValue)
+        scoreLabel.text = String(score)
+        roundLabel.text = String(round)
     }
     
     func startNewRound() {
         targetValue = 1 + Int(arc4random_uniform(100))
         currentValue = 50
         slider.value = Float(currentValue)
+        round += 1
         updateLables()
     }
 
@@ -44,9 +49,30 @@ class ViewController: UIViewController {
     
     @IBAction func showAlert() {
         
-        let message = "The value of the slider is:  \(currentValue)" + "\nThe target value is: \(targetValue)"
+        let difference = abs(targetValue - currentValue)
+        var points: Int = 100 - difference
         
-        let alert = UIAlertController(title: "Hello, World", message: message, preferredStyle: .alert)
+        let message = "You scored \(points) points."
+        
+        let title: String
+        
+        if difference == 0 {
+            title = "PERFECT! 100 Bonus Points!"
+            points += 100
+        } else if difference < 2 {
+            title = "One away! 50 Bonus Points!"
+            points += 50
+        } else if difference < 5 {
+            title = "SOOO Close."
+        } else if difference < 15 {
+            title = "Not Terrible."
+        } else {
+            title = "You need to try harder!"
+        }
+        
+        score += points
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
         
