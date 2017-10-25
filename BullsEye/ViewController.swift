@@ -52,14 +52,12 @@ class ViewController: UIViewController {
         let difference = abs(targetValue - currentValue)
         var points: Int = 100 - difference
         
-        let message = "You scored \(points) points."
-        
         let title: String
         
         if difference == 0 {
             title = "PERFECT! 100 Bonus Points!"
             points += 100
-        } else if difference < 2 {
+        } else if difference == 1 {
             title = "One away! 50 Bonus Points!"
             points += 50
         } else if difference < 5 {
@@ -72,16 +70,27 @@ class ViewController: UIViewController {
         
         score += points
         
+        let message = "You scored \(points) points."
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Awesome", style: .default, handler: {
+            action in
+                self.startNewRound()
+        })
         
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
-        
-        startNewRound()
     
+    }
+    
+    @IBAction func restart() {
+        startNewRound()
+        round = 1
+        score = 0
+        scoreLabel.text = String(0)
+        roundLabel.text = String(0)
     }
     
     
